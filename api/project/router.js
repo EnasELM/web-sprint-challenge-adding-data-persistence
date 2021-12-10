@@ -4,7 +4,6 @@ const Project = require('./model');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-
   Project.getProjects()
     .then(projects => {
       res.status(200).json(projects);

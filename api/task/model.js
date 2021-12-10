@@ -9,7 +9,6 @@ const getById = id => {
     .then((task) => {
         return{ ...task, task_completed: !!task.task_completed}
     })
-    
   }
 
   async function getTasks() {
@@ -25,12 +24,11 @@ const getById = id => {
            project_completed: !!task.project_completed
        }
    })
-   }
+ }
 
 
 async function createTasks(task) {
     const [id] = await db('tasks').insert(task)
-   
     return getById(id)
 }
 

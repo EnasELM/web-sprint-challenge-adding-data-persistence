@@ -20,8 +20,8 @@ const getById = id => {
 
 
 async function createProject(project) {
+
     const [id] = await db('projects').insert(project)
-   
     return getById(id)
 }
 
