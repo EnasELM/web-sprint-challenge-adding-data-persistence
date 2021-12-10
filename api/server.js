@@ -9,7 +9,7 @@ const server = express();
 server.use(express.json());
 server.use('/api/projects', projectRouter);
 server.use('/api/resources', resourceRouter);
-// server.use('/api/task', taskRouter);
+server.use('/api/tasks', taskRouter);
 
 server.use('*', (req, res) => {
     // catch all 404 errors middleware
