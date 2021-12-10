@@ -8,8 +8,11 @@ const getById = id => {
     
   }
 
-  function getProjects() {
-   return db('projects').select('project_name','project_description','project_completed')
+  async function getProjects() {
+   const projects = await db('projects')
+   return projects.map((project) => {
+     return{ ... project, project_completed: !!project.project_completed}
+   })
    }
 
 
