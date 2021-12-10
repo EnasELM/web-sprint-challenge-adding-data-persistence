@@ -9,7 +9,8 @@ const getById = id => {
   }
 
   function getProjects() {
-   return db('projects').select('project_name','project_description','project_completed')
+   return db('projects')
+  // .select('project_name','project_description','project_completed')
    }
 
 
