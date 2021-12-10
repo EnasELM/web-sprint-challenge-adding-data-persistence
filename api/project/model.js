@@ -3,8 +3,11 @@
 const db = require('../../data/dbConfig');
 
 const getById = id => {
-    return db('projects')
-    .where('project_id', '=' , id).first()
+     return db('projects')
+      .where('project_id', '=' , id).first()
+      .then((project) => {
+          return{ ...project, project_completed: !!project.project_completed}
+      })
     
   }
 
